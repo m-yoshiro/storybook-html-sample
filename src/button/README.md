@@ -2,6 +2,4 @@
 
 Example:
 
-```html
-<button>text</button>
-```
+<!-- EXAMPLE-CODE -->

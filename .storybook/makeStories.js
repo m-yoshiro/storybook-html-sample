@@ -1,14 +1,12 @@
-const makeStories = (baseStory, component, configs) => {
+import insertSampleCode from './insertSampleCode.js'
+
+const makeStories = (baseStory, component, mdTemplate, configs) => {
   configs.forEach(config => {
     baseStory.add(
       `${config.name}`,
       () => component(config.context),
       {
-        readme: { sidebar: `
-\`\`\`html
-${component(config.context)}
-\`\`\`
-        `}
+        readme: { sidebar: insertSampleCode(mdTemplate, `${component(config.context)}`)}
       }
     )
   })
