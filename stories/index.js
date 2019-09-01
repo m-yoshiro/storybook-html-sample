@@ -1,9 +1,17 @@
-import { storiesOf } from '@storybook/html';
+import { storiesOf, addParameters } from '@storybook/html';
 import Button from '../src/button/button.hbs'
 import ButtonReadme from '../src/button/README.md'
-import { configureReadme, addFooter, addHeader } from 'storybook-readme';
+import ButtonConfig from '../src/button/button.config.js'
+import makeStories from '../.storybook/makeStories.js'
 
-storiesOf('Button', module)
+const stories = storiesOf('Button', module)
+  .addParameters({
+    readme: {
+      sidebar: ButtonReadme,
+    }
+  })
+
+stories
   .add('with text', () => '<button class="">Hello World</button>')
   .add('With emoji', () => {
     const button = document.createElement('button');
@@ -11,10 +19,16 @@ storiesOf('Button', module)
     return button;
   })
   .add('With handlebars', () => {
-    return Button({text: 'button'});
-  }, {
+    return Button({label: 'button'});
+  },{
     readme: {
-      content: ButtonReadme,
-      sidebar: ButtonReadme,
+      sidebar: `
+\`\`\`html
+${Button({label: 'button'})}
+\`\`\`
+`,
     }
-  })
+
+  });
+
+makeStories(stories, Button, ButtonConfig)
