@@ -1,15 +1,15 @@
 export default [
   {
-    name: 'Button',
+    name: 'Primary',
     context: {
       label: 'Button',
       variant: 'primary'
     }
   },
   {
-    name: 'Button 2',
+    name: 'Secondary',
     context: {
-      label: 'Button 2',
+      label: 'Button',
       variant: 'secondary'
     }
   }

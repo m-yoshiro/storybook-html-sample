@@ -1,0 +1,13 @@
+.button {
+  padding: 0.5rem 1rem;
+}
+
+.button.button--primary {
+  background-color: darkcyan;
+  color: white;
+}
+
+.button.button--secondary {
+  background-color: olivedrab;
+  color: white;
+}
