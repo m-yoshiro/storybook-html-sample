@@ -1,8 +1,10 @@
 import { storiesOf, addParameters } from '@storybook/html';
-import ButtonConfig from '../src/button/button.config.js'
 import makeStories from '../.storybook/makeStories.js'
+
+// Button
 import Button from '../src/button/button.hbs'
 import ButtonReadme from '../src/button/README.md'
+import ButtonConfig from '../src/button/button.config.js'
 import '../src/button/button.scss'
 
 const stories = storiesOf('Button', module);
